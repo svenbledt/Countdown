@@ -1,8 +1,9 @@
+// Pixellate animation
 $(function () {
   $('.countdown__logo').pixellate('out');
   $('#text-anim1').text('THE WAITING IS OVER').hide(0).delay(1500).show(0).delay(50).hide(0).delay(50).show(0).delay(50).hide(0).delay(50).show(0).delay(50).hide(0).delay(50).show(0).fadeOut(1500)
   setTimeout(function () { $('.countdown__logo').pixellate('in'); }, 3500);
-  setTimeout(function () { $('#youtube-audio').fadeIn(1500); $('#discord').fadeIn(1500); $('#text-anim2').fadeIn(1500); $('#text-anim4').fadeIn(1500); $('#text-anim3').fadeIn(1500); }, 3500);
+  setTimeout(function () { $('#discord').fadeIn(1500); $('#text-anim2').fadeIn(1500); $('#text-anim4').fadeIn(1500); $('#text-anim3').fadeIn(1500); }, 3500);
 });
 
 var pluginName = 'pixellate',
@@ -166,3 +167,28 @@ if (!window.cancelAnimationFrame)
   function getCurrentTimestamp() {
 	return Date.now()
   }
+
+// Countdown Date().getTime()  
+var countDownDate = new Date("Dec 31, 2022 23:59:59").getTime();
+
+var x = setInterval(function() {
+
+  var now = new Date().getTime();
+    
+  var distance = countDownDate - now;
+    
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+  document.getElementById("tage").innerHTML = days;
+  document.getElementById("stunden").innerHTML = hours;
+  document.getElementById("minuten").innerHTML = minutes;    
+  document.getElementById("sekunden").innerHTML = seconds;
+
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("stunden").innerHTML = "EXPIRED";
+  }
+}, 1000);
