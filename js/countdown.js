@@ -189,6 +189,6 @@ var x = setInterval(function() {
 
   if (distance < 0) {
     clearInterval(x);
-    document.getElementById("stunden").innerHTML = "EXPIRED";
+    document.getElementById("stunden").innerHTML = "HOPE YOU HAD A MARRY CHRISTMAS";
   }
 }, 1000);
