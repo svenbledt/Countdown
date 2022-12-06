@@ -546,23 +546,10 @@ html {
 .countdown #discord {
   margin-top: 2em;
 }
-.countdown #youtube-audio {
-  position: fixed;
-  right: 2em;
-  bottom: 2em;
-}
-.countdown #youtube-audio img {
-  background: white;
-  border-radius: 100%;
-  padding: 0.25em;
-  height: 3em;
-  margin-top: 2em;
-}
 .countdown #text-anim2,
 .countdown #text-anim3,
 .countdown #text-anim4,
-.countdown #discord,
-.countdown #youtube-audio {
+.countdown #discord {
   display: none;
 }
 .pixellate-lock img {
