@@ -542,6 +542,7 @@ html {
   font-weight: 300;
   margin-top: 2em;
   text-align: center;
+  opacity: 0;
 }
 .countdown #discord {
   margin-top: 2em;
