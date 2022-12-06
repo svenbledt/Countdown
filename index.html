@@ -1,81 +1,98 @@
 <html lang="de">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Opportunity - Mach dich gefasst!</title>
 
     <!-- META -->
-	<link rel="icon" href="/img/icons8-globus.gif" type="image/gif" >
+    <link rel="icon" href="/img/icons8-globus.gif" type="image/gif" />
     <link rel="stylesheet" media="all" href="/css/main.css" />
-	<script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>  
-	<script type="text/javascript">
-        var _c = new Date().getTime();
-        document.write('<script type="text/javascript" src="js/countdown.js?c='+_c+'"><\/script>');
+    <script
+      src="https://code.jquery.com/jquery-3.6.1.min.js"
+      integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+      crossorigin="anonymous"
+    ></script>
+    <script type="text/javascript">
+      var _c = new Date().getTime();
+      document.write(
+        '<script type="text/javascript" src="js/countdown.js?c=' + _c + '"><\/script>'
+      );
     </script>
   </head>
   <body>
+    <!-- CONTENT [START] -->
 
-<!-- CONTENT [START] -->
+    <div class="container">
+      <section class="countdown">
+        <div class="countdown__logo">
+          <div><img src="./img/logo.png" /></div>
+        </div>
+        <div id="text-anim1" class="countdown__text"></div>
+        <div id="text-anim2" class="countdown__text">COUNTDOWN</div>
+        <div id="text-anim3" class="countdown__description">
+          <i>Legends never die..</i>
+        </div>
+        <div id="text-anim4">
+          <div class="countdown__timer">
+            <div class="countdown-timer">
+              <span id="tage" class="countdown-number"></span>
+              <span class="countdown-type">TAGE</span>
+            </div>
 
-<div class="container">
-  <section class="countdown">
-    <div class="countdown__logo">
-      <div><img src="./img/logo.png" /></div>
+            <div class="countdown-timer">
+              <span id="stunden" class="countdown-number"></span>
+              <span class="countdown-type">STUNDEN</span>
+            </div>
+
+            <div class="countdown-timer">
+              <span id="minuten" class="countdown-number"></span>
+              <span class="countdown-type">MINUTEN</span>
+            </div>
+
+            <div class="countdown-timer">
+              <span id="sekunden" class="countdown-number"></span>
+              <span class="countdown-type">SEKUNDEN</span>
+            </div>
+          </div>
+
+          <span class="countdown-date">AND A HAPPY NEW YEAR</span>
+        </div>
+        <a id="discord" href="https://discord.gg/c6GZKjVhxw" target="a_blank"
+          ><img
+            src="https://discordapp.com/api/guilds/443405445831327754/widget.png?style=banner2"
+        /></a>
+      </section>
+      <footer class="footer">
+        <div class="footer__copyright">
+          <img src="img/footer_logo.png" alt="" />
+
+          <p class="colorTransparent">
+            <strong
+              >&copy; 2022 Opportunity - created by
+              <a href="https://github.com/svenbledt">Sven Bledt</a></strong
+            >
+          </p>
+        </div>
+
+        <div class="footer__links">
+          <ul class="footer-links">
+            <li class="footer-links__link">
+              <a href="#status" target="_blank" class="colorGreen">Status</a>
+            </li>
+            <li class="footer-links__link">
+              <a href="#impressum">Impressum</a>
+            </li>
+            <li class="footer-links__link">
+              <a href="#nutzungsbedingungen">Nutzungsbedingungen</a>
+            </li>
+            <li class="footer-links__link">
+              <a href="mailto:support@habbo.ax">Kontakt</a>
+            </li>
+          </ul>
+        </div>
+      </footer>
     </div>
-    <div id="text-anim1" class="countdown__text"></div>
-    <div id="text-anim2" class="countdown__text">COUNTDOWN</div>
-    <div id="text-anim3" class="countdown__description"><i>Legends never die..</i></div>
-    <div id="text-anim4">
-
-      <div class="countdown__timer">
-        <div class="countdown-timer">
-          <span id="tage" class="countdown-number"></span>
-          <span class="countdown-type">TAGE</span>
-        </div>
-
-        <div class="countdown-timer">
-          <span id="stunden" class="countdown-number"></span>
-          <span class="countdown-type">STUNDEN</span>
-        </div>
-
-        <div class="countdown-timer">
-          <span id="minuten" class="countdown-number"></span>
-          <span class="countdown-type">MINUTEN</span>
-        </div>
-
-        <div class="countdown-timer">
-          <span id="sekunden" class="countdown-number"></span>
-          <span class="countdown-type">SEKUNDEN</span>
-        </div>
-      </div>
-
-      <span class="countdown-date">AND A HAPPY NEW YEAR</span>
-
-    </div>
-    <a id="discord" href="https://discord.gg/c6GZKjVhxw" target="a_blank"><img
-        src="https://discordapp.com/api/guilds/443405445831327754/widget.png?style=banner2" /></a>
-  </section>
-  <footer class="footer">
-  <div class="footer__copyright ">
-    <img src="img/footer_logo.png" alt="">
-
-    <p class="colorTransparent">
-      <strong>&copy; 2022 Opportunity - created by <a href="https://github.com/svenbledt">Sven Bledt</a></strong>
-    </p>
-  </div>
-
-  <div class="footer__links">
-    <ul class="footer-links">
-      <li class="footer-links__link "><a href="#status" target="_blank" class="colorGreen">Status</a></li>
-      <li class="footer-links__link"><a href="#impressum">Impressum</a></li>
-      <li class="footer-links__link"><a href="#nutzungsbedingungen">Nutzungsbedingungen</a></li>
-      <li class="footer-links__link"><a href="mailto:support@habbo.ax">Kontakt</a></li>
-    </ul>
-  </div>
-</footer>
-
-<!-- CONTENT [END] -->
-
-</body>
+    <!-- CONTENT [END] -->
+  </body>
 </html>
