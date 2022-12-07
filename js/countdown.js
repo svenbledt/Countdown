@@ -203,51 +203,70 @@ function getCurrentTimestamp() {
 }
 // define time
 (function () {
-	const second = 1000,
-		  minute = second * 60,
-		  hour = minute * 60,
-		  day = hour * 24;
-		 
-  
-	// damit ich nicht immer das jahr korrigieren muss 
-	let today = new Date(),
-		dd = String(today.getDate()).padStart(2, "0"),
-		mm = String(today.getMonth() + 1).padStart(2, "0"),
-		yyyy = today.getFullYear(),
-		nextYear = yyyy + 1,
-		dayMonth = "01/01/",
-		theday = dayMonth + yyyy;
-	
-	today = mm + "/" + dd + "/" + yyyy;
-	if (today > theday) {
-	  theday = dayMonth + nextYear;
-	}
-	//ende
-	
-	const countDown = new Date(theday).getTime(),
-		x = setInterval(function() {    
-  
-		  const now = new Date().getTime(),
-				distance = countDown - now;
-  
-			document.getElementById("tage").innerText = Math.floor(distance / (day)),
-			document.getElementById("stunden").innerText = Math.floor((distance % (day)) / (hour)),
-			document.getElementById("minuten").innerText = Math.floor((distance % (hour)) / (minute)),
-			document.getElementById("sekunden").innerText = Math.floor((distance % (minute)) / second);
-  
-		  // etwas später tun, wenn das Datum erreicht ist
-		  if (distance < 0) {
-			var elems = document.querySelectorAll(".countdown-type");
-			for(var index = 0; index < elems.length; index++) {
-    			elems[index].style.opacity = 0;
-			}
-			var elems = document.querySelectorAll(".countdown-number");
-			for(var index = 0; index < elems.length; index++) {
-    			elems[index].style.opacity = 0;
-			}
-			document.querySelector(".countdown-date").style.opacity = 1;
-			clearInterval(x);
-		  }
-		  //seconds
-		}, 0)
-	}());
+  const second = 1000,
+    minute = second * 60,
+    hour = minute * 60,
+    day = hour * 24;
+
+  // damit ich nicht immer das jahr korrigieren muss
+  let today = new Date(),
+    dd = String(today.getDate()).padStart(2, "0"),
+    mm = String(today.getMonth() + 1).padStart(2, "0"),
+    yyyy = today.getFullYear(),
+    nextYear = yyyy + 1,
+    dayMonth = "01/01/",
+    theday = dayMonth + yyyy;
+
+  today = mm + "/" + dd + "/" + yyyy;
+  if (today > theday) {
+    theday = dayMonth + nextYear;
+  }
+  //ende
+
+  const countDown = new Date(theday).getTime(),
+    x = setInterval(function () {
+      const now = new Date().getTime(),
+        distance = countDown - now;
+
+      (document.getElementById("tage").innerText = Math.floor(distance / day)),
+        (document.getElementById("stunden").innerText = Math.floor(
+          (distance % day) / hour
+        )),
+        (document.getElementById("minuten").innerText = Math.floor(
+          (distance % hour) / minute
+        )),
+        (document.getElementById("sekunden").innerText = Math.floor(
+          (distance % minute) / second
+        ));
+
+      // etwas später tun, wenn das Datum erreicht ist
+      if (distance < 0) {
+        var elems = document.querySelectorAll(".countdown-type");
+        for (var index = 0; index < elems.length; index++) {
+          elems[index].style.opacity = 0;
+        }
+        var elems = document.querySelectorAll(".countdown-number");
+        for (var index = 0; index < elems.length; index++) {
+          elems[index].style.opacity = 0;
+        }
+        $(function () {
+          setTimeout(function () {
+            $(".countdown__logo").pixellate("out");
+          }, 6500);
+          setTimeout(function () {
+            $("#discord").fadeOut(1500);
+            $("#text-anim2").fadeOut(1500);
+            $("#text-anim4").fadeOut(1500);
+            $("#text-anim3").fadeOut(1500);
+          }, 6500);
+          $("#text-anim5")
+            .text("HAPPY NEW YEAR " + yyyy + "")
+            .fadeIn(1500);
+        });
+      }
+      //seconds
+    }, 0);
+  $(function () {
+    $("#text-anim5").hide(0).delay(8000);
+  });
+})();
