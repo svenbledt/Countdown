@@ -214,16 +214,17 @@ function getCurrentTimestamp() {
     mm = String(today.getMonth() + 1).padStart(2, "0"),
     yyyy = today.getFullYear(),
     nextYear = yyyy + 1,
-    dayMonth = "01/01/",
-    theday = dayMonth + yyyy;
+    dayMonth = "12/08/",
+	exactTime = " 00:00:00"
+    theDay = dayMonth + yyyy + exactTime;
 
   today = mm + "/" + dd + "/" + yyyy;
-  if (today > theday) {
-    theday = dayMonth + nextYear;
+  if (today > theDay) {
+    theDay = dayMonth + nextYear;
   }
   //ende
 
-  const countDown = new Date(theday).getTime(),
+  const countDown = new Date(theDay).getTime(),
     x = setInterval(function () {
       const now = new Date().getTime(),
         distance = countDown - now;
@@ -249,24 +250,24 @@ function getCurrentTimestamp() {
         for (var index = 0; index < elems.length; index++) {
           elems[index].style.opacity = 0;
         }
-        $(function () {
-          setTimeout(function () {
-            $(".countdown__logo").pixellate("out");
-          }, 6500);
-          setTimeout(function () {
-            $("#discord").fadeOut(1500);
-            $("#text-anim2").fadeOut(1500);
-            $("#text-anim4").fadeOut(1500);
-            $("#text-anim3").fadeOut(1500);
-          }, 6500);
-          $("#text-anim5")
-            .text("HAPPY NEW YEAR " + yyyy + "")
-            .fadeIn(1500);
-        });
+		$(function () {
+			setTimeout(function () {
+			  $(".countdown__logo").pixellate("out");
+			}, 6500);			
+			setTimeout(function () {
+			  $("#discord").fadeOut(1500);
+			  $("#text-anim2").fadeOut(1500);
+			  $("#text-anim4").fadeOut(1500);
+			  $("#text-anim3").fadeOut(1500);
+			}, 6500);
+			$("#text-anim5")
+			  .text("HAPPY NEW YEAR " + yyyy + "")
+			  .fadeIn(1500);
+		  });
       }
       //seconds
     }, 0);
-  $(function () {
-    $("#text-anim5").hide(0).delay(8000);
-  });
+	$(function () {
+		$("#text-anim5").hide(0).delay(8000);
+	});
 })();
