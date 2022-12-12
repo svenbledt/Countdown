@@ -214,7 +214,7 @@ function getCurrentTimestamp() {
     mm = String(today.getMonth() + 1).padStart(2, "0"),
     yyyy = today.getFullYear(),
     nextYear = yyyy + 1,
-    dayMonth = "12/08/",
+    dayMonth = "01/01/",
 	exactTime = " 00:00:00"
     theDay = dayMonth + yyyy + exactTime;
 
